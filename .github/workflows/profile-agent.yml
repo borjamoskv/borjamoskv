@@ -21,7 +21,7 @@ jobs:
       CORTEX_PROFILE_AGENT_DB: ${{ vars.CORTEX_PROFILE_AGENT_DB }}
     steps:
       - name: Checkout profile repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Resolve local CORTEX path
         shell: bash
