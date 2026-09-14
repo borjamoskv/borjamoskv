@@ -18,7 +18,8 @@ Designing deterministic trust infrastructure and lock-free execution engines for
 | [moskv-1-apex](https://github.com/borjamoskv/moskv-1-apex) | Python · Rust | Sovereign C5-REAL L5 execution kernel — exergetic MPC & thermodynamic control |
 | [anvil-lang](https://github.com/borjamoskv/anvil-lang) | Rust · Z3 | Domain-specific programming language with formal SMT verification for smart contracts |
 | [asl-spec](https://github.com/borjamoskv/asl-spec) | Python · Lean 4 | Agent Specification Language — open standard for formally verifying agent behavior |
-| [agents-archi](https://github.com/borjamoskv/agents-archi) | TypeScript · Rust | Sovereign Agentic Architecture Registry ($N \ge 3f + 1$ BFT) |
+| [zeta26](https://github.com/borjamoskv/zeta26) | Rust · WebAssembly | High-performance deterministic compute kernels compiled to WebAssembly |
+
 
 ---
 
