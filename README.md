@@ -1,9 +1,11 @@
-# Telmo Dinámico de Moskv · Systems Architect
+# Telmo Dinámico de Moskv · Systems Architect & Hacker
 
-> **Sovereign AI Infrastructure — Python · Rust · MCP · Thermodynamic Control**
+> **Sovereign AI Infrastructure — Rust Ring-0 · Lean 4 · Z3 SMT · Landauer Bounds**
 
-Architect and open-source builder based in **Bilbao, Basque Country**.
-Designing trust infrastructure for autonomous agents: persistence level, state collapse, cryptographic accountability.
+Systems Architect, kernel hacker and open-source builder based in **Bilbao, Basque Country**.  
+Designing deterministic trust infrastructure and lock-free execution engines for autonomous systems: Ring-0 memory layout, formal verification (Curry-Howard isomorphism), neurosymbolic firewalls, and cryptographic auditability.
+
+*Hacker of the C5-REAL Sovereign Triad (`Telmo Dinámico de Moskv` / `Borja Moskv` / `Bakala de Troya`).*
 
 ---
 
@@ -11,40 +13,42 @@ Designing trust infrastructure for autonomous agents: persistence level, state c
 
 | Project | Stack | Description |
 |---|---|---|
-| [BABYLON-60](https://github.com/borjamoskv/BABYLON-60) | Python · Rust · PyO3 | Tamper-evident memory & decision lineage for AI agents via Merkle trees |
+| [BABYLON-60](https://github.com/borjamoskv/BABYLON-60) | Rust · Lean 4 · Z3 · PyO3 | C5-REAL execution kernel: 64B SPMC Seqlock (`KUDURRU-64`), Z3 neurosymbolic firewall (`MUSHUSHU-0`), formal reflection proofs, and SCITT WORM ledgers (`TUPSHIMA-L1`) |
 | [babylon60-ide](https://github.com/borjamoskv/babylon60-ide) | Tauri v2 · FastAPI · React | Sovereign multi-platform IDE with zero-copy IPC and WORM ledger inspection |
-| [moskv-1-apex](https://github.com/borjamoskv/moskv-1-apex) | Python | Sovereign C5-REAL L5 execution kernel — exergetic MPC & thermodynamic control |
-| [anvil-lang](https://github.com/borjamoskv/anvil-lang) | Rust · Z3 | Programming language with formal verification for smart contracts |
-| [asl-spec](https://github.com/borjamoskv/asl-spec) | Python | Agent Specification Language — open standard for formally verifying agent behavior |
-| [agents-archi](https://github.com/borjamoskv/agents-archi) | JavaScript | Sovereign Agentic Architecture Registry (N >= 3f + 1 BFT) |
+| [moskv-1-apex](https://github.com/borjamoskv/moskv-1-apex) | Python · Rust | Sovereign C5-REAL L5 execution kernel — exergetic MPC & thermodynamic control |
+| [anvil-lang](https://github.com/borjamoskv/anvil-lang) | Rust · Z3 | Domain-specific programming language with formal SMT verification for smart contracts |
+| [asl-spec](https://github.com/borjamoskv/asl-spec) | Python · Lean 4 | Agent Specification Language — open standard for formally verifying agent behavior |
+| [agents-archi](https://github.com/borjamoskv/agents-archi) | TypeScript · Rust | Sovereign Agentic Architecture Registry ($N \ge 3f + 1$ BFT) |
 
 ---
 
 ## 🛨️ Stack
 
 ```yaml
-Languages: Python · Rust · TypeScript · Swift · Bash · WebAssembly
-Protocols: MCP (Model Context Protocol) · PyO3 · Z3 SMT Solver
-Security:  Merkle Trees · SHA-256 · Cryptographic Audit Trails
-Systems:   Thermodynamic Optimization · Exergy Analysis · C5-REAL
-Infra:     Cloudflare · Vercel · GitHub Actions · LM Studio
+Languages:      Rust (Ring-0) · Lean 4 (Ring-1) · Python · TypeScript · Swift · C-ABI
+Formal SMT:     Z3 SMT Solver · Proof by Reflection (`by decide`) · Curry-Howard Isomorphism
+Concurrency:    Lock-Free Seqlock SPMC · L1 Cache Coherence (64B align) · Zero RFO Readers
+Security:       Ed25519 Secure Enclave · SCITT (RFC 9162) · WORM Ledgers · Merkle Inclusion
+Thermodynamics: Landauer Limit Control · Exergy Analysis · C5-REAL Architecture
+Infra:          Cloudflare · Vercel · GitHub Actions · POSIX Bare Metal
 ```
 
 ---
 
 ## 🚀 Currently Building
 
-- **escohotado-corpus** — Knowledge extraction and AI synthesis over classical literature
-- **BABYLON-60** — Cryptographic proof of agent memory and decision lineage
-- **ASL** — Open specification language for formally verifiable agent behavior
+- **BABYLON-60** — Sovereign execution kernel with formal verification in Lean 4 and Z3 Ring-0 firewall.
+- **escohotado-corpus** — Knowledge extraction and AI synthesis over classical literature and radical empiricism.
+- **ASL** — Open specification language for formally verifiable agent behavior.
 
 ---
 
 ## 📐 Principles
 
-- **State Collapse** — Deterministic injection of sovereign logic
-- **Byzantine Tolerance** — Structural resilience against I/O failure
-- **Brutalist Execution** — Architecture stripped of decorative noise
+- **Landauer Floor** — Minimizing thermodynamic dissipation at runtime ($RFO = 0$).
+- **Fail-Stop Apoptosis** — Immediate zero-tolerance cutoff (`0xDEAD_6060`) upon formal violation.
+- **Byzantine Resilience** — Mathematical fault tolerance ($f < n/3$) with lock-free concurrency.
+- **Brutalist Execution** — Zero decorative noise, deterministic Code-as-Data.
 
 ---
 
