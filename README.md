@@ -22,6 +22,18 @@ Designing deterministic trust infrastructure and lock-free execution engines for
 
 ---
 
+## 📚 Epistemic Foundations & Lineage
+
+The architecture of **BABYLON-60** and the C5-REAL systems converges at the intersection of information thermodynamics, formal methods, and radical humanities:
+
+- **Jorge Luis Borges (Combinatorial Memory & Graph Traversal):** *The Library of Babel* and labyrinthine branching paths as the foundational mental model for deterministic content-addressed storage, universal state search, and combinatorial indexing.
+- **Samuel Beckett (Subtractive Transduction & State Minimization):** Deliberate impoverishment of language (*«pour m'appauvrir»*), minimal state machines (Myhill-Nerode), and the brutalist persistence of execution past failure (*«I can't go on, I'll go on»*). Research monograph: [`para-diana`](https://github.com/borjamoskv/para-diana).
+- **Antonio Escohotado (Radical Empiricism & Monism of Substance):** Monism of continuous reality, rejection of dirigisme, auto-organized order, and rigorous empirical observation over bureaucratic dogma. Fine-tuning corpus: [`escohotado-corpus`](https://github.com/borjamoskv/escohotado-corpus) (29.6k samples).
+- **Paul Watzlawick (Second-Order Change):** Escalation loops (*«the attempted solution is the problem»*) and topological reframing (Change 2) to exit systemic attractor traps.
+- **Rolf Landauer (Thermodynamics of Computation):** The physical floor of information dissipation ($\Delta Q \ge k_B T \ln 2$), enforcing zero unnecessary bit erasure ($RFO = 0$).
+
+---
+
 ## 🛨️ Stack
 
 ```yaml
@@ -38,7 +50,8 @@ Infra:          Cloudflare · Vercel · GitHub Actions · POSIX Bare Metal
 ## 🚀 Currently Building
 
 - **BABYLON-60** — Sovereign execution kernel with formal verification in Lean 4 and Z3 Ring-0 firewall.
-- **escohotado-corpus** — Knowledge extraction and AI synthesis over classical literature and radical empiricism.
+- **escohotado-corpus** — 29.6k sample fine-tuning dataset and knowledge engine on Antonio Escohotado (monism, history of commerce, and radical empiricism).
+- **para-diana** — Academic monograph on Samuel Beckett as a subtractive transducer and finite state dynamics.
 - **ASL** — Open specification language for formally verifiable agent behavior.
 
 ---
