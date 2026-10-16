@@ -1,0 +1,80 @@
+name: SWARM-100 Sovereign Fleet Ledger
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit-fleet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Profile Repository
+        uses: actions/checkout@v4
+
+      - name: Execute SWARM-100 Public Fleet Telemetry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - << 'PYEOF'
+          import datetime as dt, hashlib, json, os, urllib.request
+
+          owner = "borjamoskv"
+          token = os.environ["GITHUB_TOKEN"]
+          repos, page = [], 1
+          while True:
+              req = urllib.request.Request(
+                  f"https://api.github.com/users/{owner}/repos?per_page=100&page={page}",
+                  headers={"Authorization": f"Bearer {token}", "User-Agent": "SWARM100-CI"},
+              )
+              batch = json.loads(urllib.request.urlopen(req).read().decode())
+              if not batch:
+                  break
+              repos.extend(batch)
+              if len(batch) < 100:
+                  break
+              page += 1
+
+          rows = []
+          for r in sorted(repos, key=lambda x: (x.get("archived", False), x["name"])):
+              rows.append({
+                  "name": r["name"],
+                  "archived": r.get("archived", False),
+                  "lang": r.get("language") or "None",
+                  "license": (r.get("license") or {}).get("spdx_id") or "NONE",
+                  "pushed": (r.get("pushed_at") or "")[:10],
+              })
+
+          digest = hashlib.sha256(json.dumps(rows, sort_keys=True).encode()).hexdigest()
+          now = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+          active = sum(1 for r in rows if not r["archived"])
+          archived = sum(1 for r in rows if r["archived"])
+
+          md = [
+              "# 🏛️ SWARM-100 Sovereign Fleet Telemetry Ledger",
+              "",
+              f"* **Timestamp:** `{now}`",
+              f"* **Public Fleet:** `{len(rows)}` total (`{active}` active · `{archived}` archived)",
+              f"* **Merkle / SHA-256 Lineage (`O1`):** `{digest}`",
+              "",
+              "| Repository | Status | Language | License | Last Push |",
+              "| :--- | :--- | :--- | :--- | :--- |",
+          ]
+          for r in rows:
+              st = "ARCHIVED" if r["archived"] else "ACTIVE"
+              md.append(f"| [`{r['name']}`](https://github.com/{owner}/{r['name']}) | `{st}` | {r['lang']} | `{r['license']}` | `{r['pushed']}` |")
+
+          with open("FLEET_LEDGER.md", "w", encoding="utf-8") as f:
+              f.write("\n".join(md) + "\n")
+          PYEOF
+
+      - name: Commit Updated FLEET_LEDGER.md
+        run: |
+          git config user.name "SWARM-100 Auditor Bot"
+          git config user.email "borjamoskv@users.noreply.github.com"
+          git add FLEET_LEDGER.md
+          git diff --staged --quiet || git commit -m "chore(telemetry): update SWARM-100 cryptographic fleet ledger [skip ci]"
+          git push
