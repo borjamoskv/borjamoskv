@@ -1,17 +1,19 @@
 # 🏛️ SWARM-100 Sovereign Fleet Telemetry Ledger
 
-* **Timestamp:** `2026-10-18 02:33 UTC`
-* **Public Fleet:** `29` total (`12` active · `17` archived)
-* **Merkle / SHA-256 Lineage (`O1`):** `f434a854252369dc7e02e1e3c2546982382913c9d25f28a6db64c15a6d371ff2`
+* **Timestamp:** `2026-10-18 18:28 UTC`
+* **Public Fleet:** `31` total (`14` active · `17` archived)
+* **Merkle / SHA-256 Lineage (`O1`):** `ae9a117a906bf884d5d5d29347459155b79c2a64b6c62eeba6ef981eb4aacbeb`
 
 | Repository | Status | Language | License | Last Push |
 | :--- | :--- | :--- | :--- | :--- |
+| [`BABYLON-60`](https://github.com/borjamoskv/BABYLON-60) | `ACTIVE` | Python | `NOASSERTION` | `2026-10-18` |
 | [`anvil-lang`](https://github.com/borjamoskv/anvil-lang) | `ACTIVE` | Rust | `MIT` | `2026-10-16` |
 | [`axiom-0`](https://github.com/borjamoskv/axiom-0) | `ACTIVE` | Rust | `MIT` | `2026-10-16` |
-| [`borjamoskv`](https://github.com/borjamoskv/borjamoskv) | `ACTIVE` | TypeScript | `NOASSERTION` | `2026-10-17` |
-| [`borjamoskv-site`](https://github.com/borjamoskv/borjamoskv-site) | `ACTIVE` | Astro | `MIT` | `2026-10-16` |
+| [`borjamoskv`](https://github.com/borjamoskv/borjamoskv) | `ACTIVE` | TypeScript | `NOASSERTION` | `2026-10-18` |
+| [`borjamoskv-site`](https://github.com/borjamoskv/borjamoskv-site) | `ACTIVE` | Astro | `MIT` | `2026-10-18` |
+| [`c5-rea`](https://github.com/borjamoskv/c5-rea) | `ACTIVE` | TypeScript | `MIT` | `2026-10-18` |
 | [`c5-socint-extraction-suite`](https://github.com/borjamoskv/c5-socint-extraction-suite) | `ACTIVE` | Python | `MIT` | `2026-10-16` |
-| [`cortex-persist`](https://github.com/borjamoskv/cortex-persist) | `ACTIVE` | Python | `MIT` | `2026-10-14` |
+| [`cortex-persist`](https://github.com/borjamoskv/cortex-persist) | `ACTIVE` | Python | `MIT` | `2026-10-18` |
 | [`escohotado-corpus`](https://github.com/borjamoskv/escohotado-corpus) | `ACTIVE` | Python | `MIT` | `2026-10-16` |
 | [`flstudio-mcp`](https://github.com/borjamoskv/flstudio-mcp) | `ACTIVE` | Python | `NOASSERTION` | `2026-10-14` |
 | [`mac-maestro`](https://github.com/borjamoskv/mac-maestro) | `ACTIVE` | Python | `Apache-2.0` | `2026-09-14` |
