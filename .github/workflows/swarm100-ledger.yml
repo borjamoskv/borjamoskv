@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Profile Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Execute SWARM-100 Public Fleet Telemetry
         env:
