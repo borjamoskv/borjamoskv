@@ -36,7 +36,7 @@ Cortex Persist maintains procedural knowledge; BABYLON-60 mediates authorized ex
 | [**`c5-socint-extraction-suite`**](https://github.com/borjamoskv/c5-socint-extraction-suite) | Python Stdlib (`0 deps`) | Social intelligence and forensic extraction toolkit |
 | [**`teorema-robinson-moskv`**](https://github.com/borjamoskv/teorema-robinson-moskv) | Rust · Lean 4 · Python | Formalization and computational work on the Robinson-Moskv Theorem |
 | [**`flstudio-mcp`**](https://github.com/borjamoskv/flstudio-mcp) | Python · FastMCP · MIDI | Native Model Context Protocol server & real-time MIDI/telemetry bridge for FL Studio 2025 |
-| [**`mac-maestro`**](https://github.com/borjamoskv/mac-maestro) | Swift · JXA · Python | Semantic-first macOS WindowServer & Safari automation bridge with safety gates and structured traces |
+| [**`mac-maestro`**](https://github.com/borjamoskv/mac-maestro) | Python · PyObjC | Semantic-first macOS automation using Accessibility APIs, with safety gates and structured traces |
 | [**`escohotado-corpus`**](https://github.com/borjamoskv/escohotado-corpus) | Python · MLX · ShareGPT | Structured corpus and analytical tools for the works of Antonio Escohotado |
 | [**`para-diana`**](https://github.com/borjamoskv/para-diana) | Typst · Pandoc · Lean 4 | Doctoral research framework and analytical toolkit for comparative literature |
 | [**`borjamoskv-site`**](https://github.com/borjamoskv/borjamoskv-site) | Astro · TypeScript · WebAudio | Portfolio, essays, and interactive web projects ([`borjamoskv.com`](https://borjamoskv.com)) |
