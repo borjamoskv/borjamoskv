@@ -33,7 +33,9 @@ class AlmacenMemoria:
     def _inicializar_db(self):
         """Prepara el esquema de base de datos soberana."""
         os.makedirs(os.path.dirname(self.ruta_db), exist_ok=True)
-        with sqlite3.connect(self.ruta_db) as conn:
+        with sqlite3.connect(self.ruta_db, timeout=30) as conn:
+            conn.execute("PRAGMA journal_mode=WAL")
+            conn.execute("PRAGMA busy_timeout=30000")
             # Mensajes soberanos
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS mensajes_soberanos (
@@ -57,7 +59,7 @@ class AlmacenMemoria:
 
     def agregar_mensaje(self, id_sesion: str, rol: str, contenido: str):
         """Añade un mensaje al historial de la sesión."""
-        with sqlite3.connect(self.ruta_db) as conn:
+        with sqlite3.connect(self.ruta_db, timeout=30) as conn:
             conn.execute(
                 "INSERT INTO mensajes_soberanos (id_sesion, rol, contenido) "
                 "VALUES (?, ?, ?)",
@@ -69,7 +71,7 @@ class AlmacenMemoria:
         self, id_sesion: str, limite: int = 50
     ) -> List[Dict[str, str]]:
         """Recupera el historial de mensajes de una sesión."""
-        with sqlite3.connect(self.ruta_db) as conn:
+        with sqlite3.connect(self.ruta_db, timeout=30) as conn:
             cursor = conn.execute(
                 "SELECT rol, contenido FROM mensajes_soberanos "
                 "WHERE id_sesion = ? ORDER BY marca_tiempo ASC LIMIT ?",
@@ -84,7 +86,7 @@ class AlmacenMemoria:
         self, id_ejecucion: str, estado: str, pasos: List[Dict[str, Any]]
     ):
         """Registra o actualiza una traza de ejecución de agente."""
-        with sqlite3.connect(self.ruta_db) as conn:
+        with sqlite3.connect(self.ruta_db, timeout=30) as conn:
             conn.execute(
                 "INSERT OR REPLACE INTO ejecuciones_agente "
                 "(id, estado, pasos, ultima_actualizacion) "

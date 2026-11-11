@@ -53,7 +53,9 @@ class AlmacenMemoria:
         dirname = os.path.dirname(self.ruta_bd)
         if dirname:
             os.makedirs(dirname, exist_ok=True)
-        with sqlite3.connect(self.ruta_bd) as conexion:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conexion:
+            conexion.execute("PRAGMA journal_mode=WAL")
+            conexion.execute("PRAGMA busy_timeout=30000")
             conexion.execute("""
                 CREATE TABLE IF NOT EXISTS mensajes_soberanos (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -124,7 +126,7 @@ class AlmacenMemoria:
             (id_sesion, rol, contenido, marca_temporal)
             VALUES (?, ?, ?, ?)
         """
-        with sqlite3.connect(self.ruta_bd) as conn:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conn:
             conn.execute(query, (id_sesion, rol, contenido, time.time()))
             conn.commit()
 
@@ -135,7 +137,7 @@ class AlmacenMemoria:
             SELECT rol, contenido FROM mensajes_soberanos
             WHERE id_sesion = ? ORDER BY marca_temporal ASC LIMIT ?
         """
-        with sqlite3.connect(self.ruta_bd) as conexion:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conexion:
             cursor = conexion.execute(query, (id_sesion, limite))
             return [
                 {"role": f[0], "content": f[1]} for f in cursor.fetchall()
@@ -149,7 +151,7 @@ class AlmacenMemoria:
             (id, estado, pasos, ultima_actualizacion)
             VALUES (?, ?, ?, ?)
         """
-        with sqlite3.connect(self.ruta_bd) as conexion:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conexion:
             params = (id_ejecucion, estado, json.dumps(pasos), datetime.now())
             conexion.execute(query, params)
             conexion.commit()
@@ -166,7 +168,7 @@ class AlmacenMemoria:
             )
             
         # Mantenemos SQLite como índice asíncrono para lecturas estructuradas
-        with sqlite3.connect(self.ruta_bd) as conexion:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conexion:
             query = """
                 INSERT INTO hechos_soberanos (dominio, contenido, exergia)
                 VALUES (?, ?, ?)
@@ -183,7 +185,7 @@ class AlmacenMemoria:
 
     def obtener_hechos_activos(self, limite: int = 100) -> List[Dict[str, Any]]:
         """Recupera hechos que aún no han decaído totalmente."""
-        with sqlite3.connect(self.ruta_bd) as conexion:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conexion:
             query = """
                 SELECT id, id_sesion, dominio, contenido, exergia,
                        entropia, estado, created_at
@@ -199,7 +201,7 @@ class AlmacenMemoria:
 
     def cristalizar_hecho(self, id_hecho: int):
         """Eleva un hecho al estado inmutable."""
-        with sqlite3.connect(self.ruta_bd) as conexion:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conexion:
             query = """
                 UPDATE hechos_soberanos SET exergia = 1.0,
                 estado = 'CRISTALIZADO', entropia = 0.0,
@@ -210,7 +212,7 @@ class AlmacenMemoria:
 
     def aniquilar_hecho(self, id_hecho: int):
         """Purga un hecho de la memoria activa (exergía = 0)."""
-        with sqlite3.connect(self.ruta_bd) as conexion:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conexion:
             query = """
                 UPDATE hechos_soberanos SET estado = 'DECAIDO', exergia = 0.0,
                 ultima_mutacion = CURRENT_TIMESTAMP WHERE id = ?
@@ -221,7 +223,7 @@ class AlmacenMemoria:
     def obtener_linaje(self, id_hecho: int,
                        profundidad: int = 10) -> List[Dict[str, Any]]:
         """Reconstruye la cadena de causalidad reversa de un hecho."""
-        with sqlite3.connect(self.ruta_bd) as conexion:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conexion:
             query = """
                 WITH RECURSIVE linaje(id_hijo, id_padre, nivel) AS (
                     SELECT id_hijo, id_padre, 0 FROM causalidad_soberana
@@ -243,7 +245,7 @@ class AlmacenMemoria:
     def registrar_operacion(self, tipo: str, objetivo: str,
                            id_hecho_causal: int):
         """Registra el inicio de una operación agéntica."""
-        with sqlite3.connect(self.ruta_bd) as conexion:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conexion:
             query = """
                 INSERT INTO operaciones_soberanas
                 (tipo, objetivo, id_hecho_causal) VALUES (?, ?, ?)
@@ -254,7 +256,7 @@ class AlmacenMemoria:
     def registrar_identidad(self, handle: str, id_sesion: str):
         """Reclama y registra una Identidad Soberana (handle)."""
         try:
-            with sqlite3.connect(self.ruta_bd) as conn:
+            with sqlite3.connect(self.ruta_bd, timeout=30) as conn:
                 conn.execute(
                     "INSERT INTO identidades_soberanas (handle, id_sesion) "
                     "VALUES (?, ?)",
@@ -267,7 +269,7 @@ class AlmacenMemoria:
 
     def verificar_disponibilidad_handle(self, handle: str) -> bool:
         """Comprueba si un handle está libre para reclamar."""
-        with sqlite3.connect(self.ruta_bd) as conn:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conn:
             cursor = conn.execute(
                 "SELECT 1 FROM identidades_soberanas WHERE handle = ?",
                 (handle.lower().strip(),)
@@ -276,7 +278,7 @@ class AlmacenMemoria:
 
     def obtener_metricas_homeostasis(self) -> Dict[str, Any]:
         """Calcula el vector de estado termodinámico del sistema."""
-        with sqlite3.connect(self.ruta_bd) as conexion:
+        with sqlite3.connect(self.ruta_bd, timeout=30) as conexion:
             # Exergía Media: Calidad del trabajo útil en hechos activos
             query_exg = """
                 SELECT AVG(exergia) FROM hechos_soberanos WHERE cristalizado = 0

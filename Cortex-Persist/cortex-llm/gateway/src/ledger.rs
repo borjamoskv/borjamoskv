@@ -1,16 +1,25 @@
-use sqlx::{sqlite::SqlitePoolOptions, Pool, Sqlite};
+use sqlx::{
+    sqlite::{SqliteConnectOptions, SqliteJournalMode, SqlitePoolOptions},
+    Pool, Sqlite,
+};
 use std::path::Path;
+use std::str::FromStr;
+use std::time::Duration;
 use tracing::info;
 
 pub async fn init_ledger(db_path: &str) -> Pool<Sqlite> {
     if !Path::new(db_path).exists() {
-        // En SQLite, sqlx necesita que el archivo exista o use sqlite::SqliteConnectOptions
         std::fs::File::create(db_path).unwrap();
     }
-    
+
+    let connect_opts = SqliteConnectOptions::from_str(&format!("sqlite://{}", db_path))
+        .expect("CORTEX-LLM: URL de base de datos inválida.")
+        .busy_timeout(Duration::from_secs(30))
+        .journal_mode(SqliteJournalMode::Wal);
+
     let pool = SqlitePoolOptions::new()
         .max_connections(5)
-        .connect(&format!("sqlite://{}", db_path))
+        .connect_with(connect_opts)
         .await
         .expect("CORTEX-LLM: Fallo crítico al instanciar el Ledger.");
 

@@ -70,7 +70,7 @@ governor = AgentStabilityGovernor()
 # ── DB bootstrap ──────────────────────────────────────────────────────────────
 def _init_db():
     os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
-    with sqlite3.connect(DB_PATH) as c:
+    with sqlite3.connect(DB_PATH, timeout=30) as c:
         c.execute("PRAGMA journal_mode=WAL")
         c.execute("PRAGMA synchronous=NORMAL")
         c.execute("""
@@ -116,7 +116,7 @@ def _init_db():
 
 @contextmanager
 def _db():
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH, timeout=30)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA journal_mode=WAL")
     try:

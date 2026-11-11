@@ -45,7 +45,7 @@ class EventStore:
             db_path = str(cortex_dir / "ouroboros_events.db")
 
         self.db_path = db_path
-        self._conn = sqlite3.connect(db_path)
+        self._conn = sqlite3.connect(db_path, timeout=30)
         self._conn.execute("PRAGMA journal_mode=WAL")
         self._conn.executescript(_SCHEMA)
         self._conn.commit()
