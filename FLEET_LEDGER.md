@@ -1,25 +1,27 @@
 # 🏛️ SWARM-100 Sovereign Fleet Telemetry Ledger
 
-* **Timestamp:** `2026-10-18 18:28 UTC`
-* **Public Fleet:** `31` total (`14` active · `17` archived)
-* **Merkle / SHA-256 Lineage (`O1`):** `ae9a117a906bf884d5d5d29347459155b79c2a64b6c62eeba6ef981eb4aacbeb`
+* **Timestamp:** `2026-11-15 00:12 UTC`
+* **Public Fleet:** `32` total (`16` active · `16` archived)
+* **Merkle / SHA-256 Lineage (`O1`):** `9dae2de64b511b9144102ed9e1d560d981b1bbda0e1f38a238c88e3874eed14d`
 
 | Repository | Status | Language | License | Last Push |
 | :--- | :--- | :--- | :--- | :--- |
-| [`BABYLON-60`](https://github.com/borjamoskv/BABYLON-60) | `ACTIVE` | Python | `NOASSERTION` | `2026-10-18` |
-| [`anvil-lang`](https://github.com/borjamoskv/anvil-lang) | `ACTIVE` | Rust | `MIT` | `2026-10-16` |
-| [`axiom-0`](https://github.com/borjamoskv/axiom-0) | `ACTIVE` | Rust | `MIT` | `2026-10-16` |
-| [`borjamoskv`](https://github.com/borjamoskv/borjamoskv) | `ACTIVE` | TypeScript | `NOASSERTION` | `2026-10-18` |
-| [`borjamoskv-site`](https://github.com/borjamoskv/borjamoskv-site) | `ACTIVE` | Astro | `MIT` | `2026-10-18` |
-| [`c5-rea`](https://github.com/borjamoskv/c5-rea) | `ACTIVE` | TypeScript | `MIT` | `2026-10-18` |
+| [`BABYLON-60`](https://github.com/borjamoskv/BABYLON-60) | `ACTIVE` | Python | `NOASSERTION` | `2026-11-13` |
+| [`anvil-lang`](https://github.com/borjamoskv/anvil-lang) | `ACTIVE` | Rust | `MIT` | `2026-11-04` |
+| [`axiom-0`](https://github.com/borjamoskv/axiom-0) | `ACTIVE` | Rust | `MIT` | `2026-11-13` |
+| [`babylon60-verification`](https://github.com/borjamoskv/babylon60-verification) | `ACTIVE` | Python | `NOASSERTION` | `2026-10-24` |
+| [`borjamoskv`](https://github.com/borjamoskv/borjamoskv) | `ACTIVE` | HTML | `NOASSERTION` | `2026-11-14` |
+| [`borjamoskv-site`](https://github.com/borjamoskv/borjamoskv-site) | `ACTIVE` | HTML | `NONE` | `2026-11-04` |
+| [`c5-rea`](https://github.com/borjamoskv/c5-rea) | `ACTIVE` | Python | `MIT` | `2026-11-13` |
 | [`c5-socint-extraction-suite`](https://github.com/borjamoskv/c5-socint-extraction-suite) | `ACTIVE` | Python | `MIT` | `2026-10-16` |
-| [`cortex-persist`](https://github.com/borjamoskv/cortex-persist) | `ACTIVE` | Python | `MIT` | `2026-10-18` |
-| [`escohotado-corpus`](https://github.com/borjamoskv/escohotado-corpus) | `ACTIVE` | Python | `MIT` | `2026-10-16` |
-| [`flstudio-mcp`](https://github.com/borjamoskv/flstudio-mcp) | `ACTIVE` | Python | `NOASSERTION` | `2026-10-14` |
-| [`mac-maestro`](https://github.com/borjamoskv/mac-maestro) | `ACTIVE` | Python | `Apache-2.0` | `2026-09-14` |
-| [`naroa.online`](https://github.com/borjamoskv/naroa.online) | `ACTIVE` | TypeScript | `NOASSERTION` | `2026-10-16` |
+| [`cortex-persist`](https://github.com/borjamoskv/cortex-persist) | `ACTIVE` | Python | `MIT` | `2026-11-13` |
+| [`escohotado-corpus`](https://github.com/borjamoskv/escohotado-corpus) | `ACTIVE` | Python | `MIT` | `2026-11-06` |
+| [`flstudio-mcp`](https://github.com/borjamoskv/flstudio-mcp) | `ACTIVE` | Python | `NOASSERTION` | `2026-11-12` |
+| [`mac-maestro`](https://github.com/borjamoskv/mac-maestro) | `ACTIVE` | Python | `Apache-2.0` | `2026-10-28` |
+| [`naroa.online`](https://github.com/borjamoskv/naroa.online) | `ACTIVE` | HTML | `NOASSERTION` | `2026-11-11` |
 | [`para-diana`](https://github.com/borjamoskv/para-diana) | `ACTIVE` | Python | `NOASSERTION` | `2026-10-16` |
-| [`teorema-robinson-moskv`](https://github.com/borjamoskv/teorema-robinson-moskv) | `ACTIVE` | Python | `NOASSERTION` | `2026-10-14` |
+| [`teorema-robinson-moskv`](https://github.com/borjamoskv/teorema-robinson-moskv) | `ACTIVE` | Python | `NOASSERTION` | `2026-11-11` |
+| [`tt-metal`](https://github.com/borjamoskv/tt-metal) | `ACTIVE` | Python | `Apache-2.0` | `2026-10-28` |
 | [`ComfyUI`](https://github.com/borjamoskv/ComfyUI) | `ARCHIVED` | None | `GPL-3.0` | `2026-08-03` |
 | [`MiMo-Audio`](https://github.com/borjamoskv/MiMo-Audio) | `ARCHIVED` | Python | `NOASSERTION` | `2026-08-03` |
 | [`OpenMontage`](https://github.com/borjamoskv/OpenMontage) | `ARCHIVED` | Python | `NOASSERTION` | `2026-08-02` |
@@ -35,5 +37,4 @@
 | [`naroagutierrezgil.com`](https://github.com/borjamoskv/naroagutierrezgil.com) | `ARCHIVED` | TypeScript | `NOASSERTION` | `2026-09-15` |
 | [`sovereign-compiler`](https://github.com/borjamoskv/sovereign-compiler) | `ARCHIVED` | Rust | `NONE` | `2026-09-19` |
 | [`tinygrad`](https://github.com/borjamoskv/tinygrad) | `ARCHIVED` | None | `MIT` | `2026-09-13` |
-| [`tt-metal`](https://github.com/borjamoskv/tt-metal) | `ARCHIVED` | None | `Apache-2.0` | `2026-09-12` |
 | [`zeta26`](https://github.com/borjamoskv/zeta26) | `ARCHIVED` | WebAssembly | `MIT` | `2026-09-14` |
