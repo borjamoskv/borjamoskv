@@ -1,24 +1,25 @@
 # 🏛️ SWARM-100 Sovereign Fleet Telemetry Ledger
 
-* **Timestamp:** `2026-11-15 00:12 UTC`
-* **Public Fleet:** `32` total (`16` active · `16` archived)
-* **Merkle / SHA-256 Lineage (`O1`):** `9dae2de64b511b9144102ed9e1d560d981b1bbda0e1f38a238c88e3874eed14d`
+* **Timestamp:** `2026-11-22 04:33 UTC`
+* **Public Fleet:** `33` total (`17` active · `16` archived)
+* **Merkle / SHA-256 Lineage (`O1`):** `f0650893f38780d82869204da749abd572b7d127e7680addc80058d93694948d`
 
 | Repository | Status | Language | License | Last Push |
 | :--- | :--- | :--- | :--- | :--- |
-| [`BABYLON-60`](https://github.com/borjamoskv/BABYLON-60) | `ACTIVE` | Python | `NOASSERTION` | `2026-11-13` |
+| [`BABYLON-60`](https://github.com/borjamoskv/BABYLON-60) | `ACTIVE` | Python | `NOASSERTION` | `2026-11-20` |
 | [`anvil-lang`](https://github.com/borjamoskv/anvil-lang) | `ACTIVE` | Rust | `MIT` | `2026-11-04` |
 | [`axiom-0`](https://github.com/borjamoskv/axiom-0) | `ACTIVE` | Rust | `MIT` | `2026-11-13` |
 | [`babylon60-verification`](https://github.com/borjamoskv/babylon60-verification) | `ACTIVE` | Python | `NOASSERTION` | `2026-10-24` |
-| [`borjamoskv`](https://github.com/borjamoskv/borjamoskv) | `ACTIVE` | HTML | `NOASSERTION` | `2026-11-14` |
+| [`borjamoskv`](https://github.com/borjamoskv/borjamoskv) | `ACTIVE` | HTML | `NOASSERTION` | `2026-11-21` |
 | [`borjamoskv-site`](https://github.com/borjamoskv/borjamoskv-site) | `ACTIVE` | HTML | `NONE` | `2026-11-04` |
 | [`c5-rea`](https://github.com/borjamoskv/c5-rea) | `ACTIVE` | Python | `MIT` | `2026-11-13` |
 | [`c5-socint-extraction-suite`](https://github.com/borjamoskv/c5-socint-extraction-suite) | `ACTIVE` | Python | `MIT` | `2026-10-16` |
-| [`cortex-persist`](https://github.com/borjamoskv/cortex-persist) | `ACTIVE` | Python | `MIT` | `2026-11-13` |
+| [`cortex-persist`](https://github.com/borjamoskv/cortex-persist) | `ACTIVE` | Python | `MIT` | `2026-11-18` |
 | [`escohotado-corpus`](https://github.com/borjamoskv/escohotado-corpus) | `ACTIVE` | Python | `MIT` | `2026-11-06` |
-| [`flstudio-mcp`](https://github.com/borjamoskv/flstudio-mcp) | `ACTIVE` | Python | `NOASSERTION` | `2026-11-12` |
+| [`flstudio-mcp`](https://github.com/borjamoskv/flstudio-mcp) | `ACTIVE` | Python | `NOASSERTION` | `2026-11-18` |
+| [`ibc-contracts`](https://github.com/borjamoskv/ibc-contracts) | `ACTIVE` | None | `Apache-2.0` | `2026-11-18` |
 | [`mac-maestro`](https://github.com/borjamoskv/mac-maestro) | `ACTIVE` | Python | `Apache-2.0` | `2026-10-28` |
-| [`naroa.online`](https://github.com/borjamoskv/naroa.online) | `ACTIVE` | HTML | `NOASSERTION` | `2026-11-11` |
+| [`naroa.online`](https://github.com/borjamoskv/naroa.online) | `ACTIVE` | HTML | `NOASSERTION` | `2026-11-18` |
 | [`para-diana`](https://github.com/borjamoskv/para-diana) | `ACTIVE` | Python | `NOASSERTION` | `2026-10-16` |
 | [`teorema-robinson-moskv`](https://github.com/borjamoskv/teorema-robinson-moskv) | `ACTIVE` | Python | `NOASSERTION` | `2026-11-11` |
 | [`tt-metal`](https://github.com/borjamoskv/tt-metal) | `ACTIVE` | Python | `Apache-2.0` | `2026-10-28` |
